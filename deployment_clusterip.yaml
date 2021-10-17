@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: hello-server
   labels:
-    type: endpoints-app
+    role: hello
 spec:
   replicas: 3
   selector:
