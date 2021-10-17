@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-server-deployment
+  name: hello-server
   labels:
-    role: hello-server-deployment
+    type: endpoints-app
 spec:
   replicas: 3
   selector:
