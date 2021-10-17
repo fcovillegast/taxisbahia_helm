@@ -2,8 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hello
-  labels:
-    type: endpoints-app
 spec:
   replicas: 3
   selector:
@@ -15,11 +13,11 @@ spec:
         role: hello
     spec:
       containers:
-      - name: hello-app
-        image: gcr.io/google-samples/hello-app:1.0
-        imagePullPolicy: Always
-        ports:
-          - containerPort: 8080
+        - name: hello
+          image: gcr.io/google-samples/hello-app:1.0
+          ports:
+            - containerPort: 8080
+
 ---
 apiVersion: v1
 kind: Service
