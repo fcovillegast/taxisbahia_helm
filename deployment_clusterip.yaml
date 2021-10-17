@@ -1,14 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-server
+  name: hello
   labels:
     type: endpoints-app
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: hello-server
+      app: hello
   template:
     metadata:
       labels:
