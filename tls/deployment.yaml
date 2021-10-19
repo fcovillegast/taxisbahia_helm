@@ -15,19 +15,8 @@ spec:
         app: taxisbahiadeploy
     spec:
       containers:
-      - name: taxisbahiadeploy
+      - name: hello-app
         image: gcr.io/innate-beacon-797/taxisbahia
         imagePullPolicy: Always
         ports:
-          - name: http
           - containerPort: 8080
-        livenessProbe:
-          httpGet:
-            path: /
-            port: 8080
-            scheme: HTTP
-        readinessProbe:
-          httpGet:
-            path: /
-            scheme: HTTP
-            port: 8080
