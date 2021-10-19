@@ -13,5 +13,7 @@ spec:
     http:
       paths:
       - backend:
-          serviceName: esp-srv
-          servicePort: 30000
+          service:
+            name: esp-srv
+            port:
+              number: 8080
