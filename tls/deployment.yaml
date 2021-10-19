@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: hello-app
-        image: gcr.io/innate-beacon-797/taxisbahia
+        image: gcr.io/innate-beacon-797/taxisbahia:1.0.131
         imagePullPolicy: Always
         ports:
           - containerPort: 8080
