@@ -14,4 +14,4 @@ spec:
       paths:
       - backend:
           serviceName: esp-srv
-          servicePort: 80
+          servicePort: 30000
