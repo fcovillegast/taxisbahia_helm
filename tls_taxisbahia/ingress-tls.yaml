@@ -11,10 +11,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - taxibahia.cl
+    - taxisbahia.cl
     secretName: esp-tls
   rules:
-  - host: taxibahia.cl
+  - host: taxisbahia.cl
     http:
       paths:
       - backend:
