@@ -9,10 +9,10 @@ metadata:
   labels:
     type: endpoints-app
 spec:
-  tls:
-  - hosts:
-    - www.taxisbahia.cl
-    secretName: esp-tls
   backend:
-      serviceName: taxisbahia
-      servicePort: 80
+    serviceName: taxisbahia
+    servicePort: 80
+  tls:
+    - secretName: esp-tls
+      hosts:
+        - www.taxisbahia.com
