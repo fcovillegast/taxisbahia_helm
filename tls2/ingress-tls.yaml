@@ -15,4 +15,4 @@ spec:
     secretName: esp-tls
   backend:
       serviceName: taxisbahia
-      servicePort: 8080
+      servicePort: 80
