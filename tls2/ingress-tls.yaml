@@ -14,5 +14,5 @@ spec:
     - www.taxisbahia.cl
     secretName: esp-tls
   backend:
-      serviceName: esp-srv
+      serviceName: taxisbahiadeploy
       servicePort: 8080
