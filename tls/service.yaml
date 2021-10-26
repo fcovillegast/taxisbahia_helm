@@ -5,7 +5,7 @@ metadata:
   labels:
     type: esp-srv
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
   - port: 8080
     targetPort: 8080
