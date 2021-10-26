@@ -13,7 +13,7 @@ x-google-allow: all
 x-google-endpoints:
 - name: "taxisbahia.cl"
   allowCors: true
-  target: 35.225.187.87
+  target: 34.123.88.200
 consumes:
 - "application/json"
 produces:
