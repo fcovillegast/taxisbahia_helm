@@ -15,7 +15,7 @@ spec:
         app: taxisbahia
     spec:
       containers:
-      - name: hello-app
+      - name: taxisbahia
         image: gcr.io/innate-beacon-797/taxisbahia:1.0.131
         imagePullPolicy: Always
         ports:
