@@ -43,8 +43,9 @@ metadata:
   name: esp-ingress
   annotations:
     kubernetes.io/ingress.class: nginx
-    ingress.kubernetes.io/ssl-redirect: "true"
-    cert-manager.io/cluster-issuer: letsencrypt-prod
+    kubernetes.io/ingress.global-static-ip-name: 35.239.238.163
+    certmanager.k8s.io/cluster-issuer: letsencrypt-prod
+    certmanager.k8s.io/acme-http01-edit-in-place: "true"
   labels:
     type: endpoints-app
 spec:
