@@ -29,6 +29,7 @@ metadata:
     type: esp-srv
 spec:
   type: LoadBalancer
+  loadBalancerIP: 35.239.238.163
   ports:
     - port: 80
       targetPort: 8080
