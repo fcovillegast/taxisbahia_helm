@@ -15,7 +15,7 @@ spec:
         app: sampleapp
     spec:
       containers:
-        - name: sampleContainer
+        - name: sample-container
           image: nginx:1.7.9
           ports:
             - name: http
