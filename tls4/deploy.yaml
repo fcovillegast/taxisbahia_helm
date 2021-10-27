@@ -3,16 +3,16 @@ kind: Deployment
 metadata:
   name: sample-deployment
   labels:
-    app: sampleApp
+    app: sampleapp
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: sampleApp
+      app: sampleapp
   template:
     metadata:
       labels:
-        app: sampleApp
+        app: sampleapp
     spec:
       containers:
         - name: sampleContainer
@@ -31,13 +31,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: sampleApp-service
+  name: sampleapp-service
   labels:
-    app: sampleApp
+    app: sampleapp
 spec:
   type: NodePort
   selector:
-    app: sampleApp
+    app: sampleapp
   ports:
     - name: http
       protocol: TCP
