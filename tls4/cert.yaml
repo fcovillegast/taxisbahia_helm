@@ -22,7 +22,7 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
     ingress.kubernetes.io/ssl-redirect: "true"
-    cert-manager.io/cluster-issuer: letsencrypt-prod
+    cert-manager.io/cluster-issuer: letsencrypt-staging
   labels:
     type: endpoints-app
 spec:
