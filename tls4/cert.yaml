@@ -38,14 +38,14 @@ annotations:
   certmanager.k8s.io/acme-challenge-type: http01
   certmanager.k8s.io/cluster-issuer: letsencrypt
 spec:
-  tls:
-    - hosts:
-        - taxisbahia.cl
-        secretName: guestbook-secret-name
   rules:
     - host: taxisbahia.cl
-        http:
+      http:
         paths:
           - backend:
               serviceName: taxisbahia
               servicePort: 8080
+  tls:
+    - hosts:
+        - taxisbahia.cl
+      secretName: tls-cert
