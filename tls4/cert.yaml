@@ -34,3 +34,4 @@ spec:
   tls:
     - hosts:
         - taxisbahia.cl
+      secretName: cm-tls-broken-staging
