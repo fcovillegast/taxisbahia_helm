@@ -1,7 +1,23 @@
 apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: certificate-name
+spec:
+  secretName: tls-cert
+  duration: 24h
+  renewBefore: 12h
+  commonName: taxisbahia.cl
+  dnsNames:
+    - taxisbahia.cl
+  issuerRef:
+    name: letsencrypt
+    kind: ClusterIssuer
+
+---
+apiVersion: cert-manager.io/v1alpha2
 kind: ClusterIssuer
 metadata:
-  name: letsencrypt
+  name: letsencrypt-staging
 spec:
   acme:
     email: fcovillegast@gmail.com
