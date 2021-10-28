@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: taxisbahia
-  namespace: mini-api
   labels:
     type: endpoints-app
 spec:
