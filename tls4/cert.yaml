@@ -1,20 +1,4 @@
 apiVersion: cert-manager.io/v1alpha2
-kind: Certificate
-metadata:
-  name: certificate-name
-spec:
-  secretName: tls-cert
-  duration: 24h
-  renewBefore: 12h
-  commonName: taxisbahia.cl
-  dnsNames:
-    - taxisbahia.cl
-  issuerRef:
-    name: letsencrypt
-    kind: ClusterIssuer
-
----
-apiVersion: cert-manager.io/v1alpha2
 kind: ClusterIssuer
 metadata:
   name: letsencrypt
@@ -22,7 +6,7 @@ spec:
   acme:
     email: fcovillegast@gmail.com
     privateKeySecretRef:
-      name: letsencrypt-private-key
+      name: letsencrypt-staging
     server: https://acme-v02.api.letsencrypt.org/directory
     solvers:
       - http01:
@@ -31,23 +15,22 @@ spec:
         selector: {}
 
 ---
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
+  name: my-ingress
   annotations:
-    certmanager.k8s.io/acme-challenge-type: http01
-    certmanager.k8s.io/cluster-issuer: letsencrypt
-  name: ingress-rule
-  namespace: default
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-staging
 spec:
   rules:
     - host: taxisbahia.cl
       http:
         paths:
-          - backend:
+          - path: /
+            backend:
               serviceName: taxisbahia
-              servicePort: 8080
+              servicePort: 80
   tls:
     - hosts:
         - taxisbahia.cl
-      secretName: tls-cert
