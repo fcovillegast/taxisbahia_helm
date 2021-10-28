@@ -35,5 +35,5 @@ spec:
       http:
         paths:
           - backend:
-              serviceName: esp-srv
-              servicePort: 8080
+              serviceName: taxisbahia
+              servicePort: 80
