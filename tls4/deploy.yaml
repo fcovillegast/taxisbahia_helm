@@ -2,19 +2,22 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: taxisbahia
+  labels:
+    type: endpoints-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      role: taxisbahia
+      app: taxisbahia
   template:
     metadata:
       labels:
-        role: taxisbahia
+        app: taxisbahia
     spec:
       containers:
         - name: taxisbahia
           image: gcr.io/innate-beacon-797/taxisbahia:1.0.131
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
 ---
@@ -29,4 +32,4 @@ spec:
       targetPort: 8080
       nodePort: 30000
   selector:
-    role: taxibahia
+    app: taxisbahia
