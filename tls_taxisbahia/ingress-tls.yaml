@@ -18,5 +18,5 @@ spec:
     http:
       paths:
       - backend:
-          serviceName: taxibahia
+          serviceName: taxisbahia
           servicePort: 8080
