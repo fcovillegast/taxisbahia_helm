@@ -1,14 +1,26 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ingress
+  name: esp-ingress
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/ingress.class: nginx
+    ingress.kubernetes.io/ssl-redirect: "true"
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+  labels:
+    type: endpoints-app
 spec:
+  tls:
+    - hosts:
+        - taxisbahia.cl
+      secretName: esp-tls
   rules:
     - host: taxisbahia.cl
       http:
         paths:
-          - backend:
-              serviceName: taxisbahia
-              servicePort: 8080
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: taxisbahia
+                port:
+                  number: 8080
