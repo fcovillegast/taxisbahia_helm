@@ -8,12 +8,12 @@ spec:
   issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer
-  commonName: api.endpoints.innate-beacon-797.cloud.goog
+  commonName: taxisbahia.cl
   dnsNames:
-  - api.endpoints.innate-beacon-797.cloud.goog
+  - taxisbahia.cl
   acme:
     config:
     - http01:
         ingress: esp-ingress
       domains:
-      - api.endpoints.innate-beacon-797.cloud.goog
+      - taxisbahia.cl
