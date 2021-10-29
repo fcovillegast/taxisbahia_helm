@@ -1,4 +1,4 @@
-apiVersion: networking.k8s.io/v1
+apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: esp-ingress
@@ -12,10 +12,6 @@ spec:
     - host: taxisbahia.cl
       http:
         paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: esp-srv
-                port:
-                  number: 8080
+          - backend:
+              serviceName: esp-srv
+              servicePort: 8080
