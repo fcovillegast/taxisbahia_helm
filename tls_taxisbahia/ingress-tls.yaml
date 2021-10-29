@@ -14,7 +14,8 @@ spec:
         - taxisbahia.cl
       secretName: esp-tls
   rules:
-    - http:
+    - host: taxisbahia.cl
+      http:
         paths:
           - path: /
             pathType: Prefix
