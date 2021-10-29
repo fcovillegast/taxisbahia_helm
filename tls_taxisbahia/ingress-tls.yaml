@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: esp-ingress
@@ -10,13 +10,16 @@ metadata:
     type: endpoints-app
 spec:
   tls:
-  - hosts:
-    - taxisbahia.cl
-    secretName: esp-tls
+    - hosts:
+        - taxisbahia.cl
+      secretName: esp-tls
   rules:
-  - host: taxisbahia.cl
-    http:
-      paths:
-      - backend:
-          serviceName: taxisbahia
-          servicePort: 8080
+    - http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: taxisbahia
+                port:
+                  number: 8080
