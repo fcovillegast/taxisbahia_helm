@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: esp-ingress
@@ -9,9 +9,12 @@ metadata:
     type: endpoints-app
 spec:
   rules:
-    - host: taxisbahia.cl
-      http:
+    - http:
         paths:
-          - backend:
-              serviceName: esp-srv
-              servicePort: 8080
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: taxisbahiadeploy
+                port:
+                  number: 8080
