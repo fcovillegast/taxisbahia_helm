@@ -9,10 +9,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - taxisbahia.cl
+        - taxisbahia.taxisbahia.cl
       secretName: testsecret-tls
   rules:
-    - host: taxisbahia.cl
+    - host: taxisbahia.taxisbahia.cl
       http:
         paths:
           - path: /
