@@ -9,7 +9,7 @@ spec:
   tls:
   - hosts:
     - taxisbahia.cl
-    secretName: quickstart-example-tls
+    secretName: esp-tls
   rules:
     - host: taxisbahia.cl
       http:
