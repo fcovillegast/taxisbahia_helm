@@ -9,7 +9,7 @@ metadata:
 spec:
   tls:
     - hosts:
-        - taxisbahia.cl
+      - taxisbahia.cl
       secretName: quickstart-example-tls
   rules:
     - host: taxisbahia.cl
