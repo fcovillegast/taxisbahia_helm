@@ -11,7 +11,7 @@ metadata:
 spec:
   tls:
     - hosts:
-        - taxisbahia.cl
+      - taxisbahia.cl
       secretName: esp-tls
   rules:
     - host: taxisbahia.cl
