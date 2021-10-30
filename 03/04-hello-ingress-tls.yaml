@@ -10,7 +10,7 @@ spec:
   tls:
     - hosts:
         - taxisbahia.cl
-      secretName: esp-tls
+      secretName: testsecret-tls
   rules:
     - host: taxisbahia.cl
       http:
