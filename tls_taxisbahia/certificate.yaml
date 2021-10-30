@@ -6,7 +6,7 @@ metadata:
 spec:
   secretName: esp-tls
   issuerRef:
-    name: letsencrypt-prod
+    name: letsencrypt-staging
     kind: ClusterIssuer
   commonName: taxisbahia.cl
   dnsNames:
