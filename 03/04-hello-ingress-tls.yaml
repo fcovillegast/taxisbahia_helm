@@ -10,11 +10,15 @@ spec:
   tls:
     - hosts:
         - taxisbahia.cl
-      secretName: hello-tls
+      secretName: testsecret-tls
   rules:
     - host: taxisbahia.cl
       http:
         paths:
-          - backend:
-              serviceName: hello-v1-svc
-              servicePort: 80
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: hello-v1-svc
+                port:
+                  number: 80
