@@ -17,4 +17,4 @@ spec:
         paths:
           - backend:
               serviceName: taxisbahia
-              servicePort: 80
+              servicePort: 8080
