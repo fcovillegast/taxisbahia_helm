@@ -17,6 +17,8 @@ spec:
     - host: taxisbahia.cl
       http:
         paths:
-          - backend:
+          - path: /
+            pathType: Prefix
+            backend:
               serviceName: taxisbahia
               servicePort: 8080
