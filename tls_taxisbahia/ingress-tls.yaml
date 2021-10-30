@@ -1,17 +1,16 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ingress
+  name: kuard
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
     kubernetes.io/ingress.class: "nginx"
-    ingress.kubernetes.io/ssl-redirect: "true"
-    cert-manager.io/issuer: "letsencrypt-staging"
+    #cert-manager.io/issuer: "letsencrypt-staging"
+
 spec:
   tls:
     - hosts:
       - taxisbahia.cl
-      secretName: testsecret-tls
+      secretName: quickstart-example-tls
   rules:
     - host: taxisbahia.cl
       http:
