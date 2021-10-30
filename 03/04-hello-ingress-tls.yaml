@@ -12,7 +12,7 @@ spec:
         - www.taxisbahia.cl
       secretName: esp-tls
   rules:
-    - host: www.taxisbahia.cl
+    - host: taxisbahia.cl
       http:
         paths:
           - path: /
