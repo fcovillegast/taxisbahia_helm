@@ -11,5 +11,5 @@ spec:
         paths:
           - path: /
             backend:
-              serviceName: stilton
+              serviceName: taxisbahia
               servicePort: http
