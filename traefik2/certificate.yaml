@@ -1,9 +1,19 @@
-dashboard:
-  enabled: true
-  domain: traefik-ui.dashboard
-rbac:
-  enabled: true
-kubernetes:
-  namespaces:
-    - default
-    - kube-system
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: taxisbahia-cl-cert
+  namespace: cert-manager
+spec:
+  secretName: taxisbahia-cl-cert-secret
+  isCA: true
+  commonName: '*.taxisbahia.cl'
+  organization:
+    - taxisbahia
+  dnsNames:
+    - taxisbahia.cl
+    - '*.taxisbahia.cl'
+  keySize: 2048
+  keyAlgorithm: rsa
+  issuerRef:
+    name: taxisbahia-ca-issuer
+    kind: ClusterIssuer
